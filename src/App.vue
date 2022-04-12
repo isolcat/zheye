@@ -1,30 +1,45 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="container"></div>
+  <column-list :list="list"></column-list>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ColumnList, { ColumnProps } from './components/ColumnList.vue'
+const testData:ColumnProps[] = [
+  {
+    id: 1,
+    title: '技术',
+    avatar: 'https://avatars0.githubusercontent.com/u/8186664?s=460&v=4',
+    description: '技术是一种艺术，技术是一种生活'
+  },
+  {
+    id: 2,
+    title: '生活',
+    // avatar: 'https://avatars0.githubusercontent.com/u/8186664?s=460&v=4',
+    description: '生活是一种艺术，生活是一种生活'
+  },
+  {
+    id: 3,
+    title: '旅行',
+    avatar: 'https://avatars0.githubusercontent.com/u/8186664?s=460&v=4',
+    description: '旅行是一种艺术，旅行是一种生活'
+  }
+]
+export default defineComponent({
+  name: 'App',
+  components: {
+    ColumnList
+  },
+  setup () {
+    return {
+      list: testData
+    }
+  }
+})
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
