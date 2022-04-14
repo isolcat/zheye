@@ -8,8 +8,7 @@
 import { defineComponent } from 'vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ColumnList, { ColumnProps } from './components/ColumnList.vue'
-import GlobalHeader from './components/GlobalHeader.vue'
-import { UserProps } from './user'
+import GlobalHeader, { UserProps } from './components/GlobalHeader.vue'
 
 const testData:ColumnProps[] = [
   {
